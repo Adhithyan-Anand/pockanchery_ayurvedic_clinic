@@ -172,3 +172,22 @@
   background-position: center;
   background-blend-mode: overlay;
 }
+
+/* Glowing blinking dot for online status */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.glow-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #4ade80 60%, #22c55e 80%, rgba(34,197,94,0.3) 100%);
+  box-shadow:
+    0 0 8px 4px #4ade80cc,
+    0 0 24px 12px #22c55e66,
+    0 0 40px 24px #22c55e33;
+  display: inline-block;
+  margin-right: 0.5rem;
+  animation: blink 1.1s infinite;
+}

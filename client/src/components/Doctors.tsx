@@ -55,6 +55,7 @@ export default function Doctors() {
         { number: "8893434393", time: "9pm – 10pm" }
       ],
       image: man,
+      onlineConsultation: true,
       moreDetails: `
     <p>Obtained <strong>B.A.M.S.</strong> degree from Vaidyaratnam Ayurveda College, Ollur, Thaikattussery.<br><br></p>
     <p>Received Post Graduation degree in <strong>M.S. Shalakyatantra</strong> from Amrita School of Ayurveda.</p>
@@ -128,6 +129,7 @@ export default function Doctors() {
         { number: "9061547177", time: "9pm – 10pm" }
       ],
       image: lady,
+      onlineConsultation: true,
       moreDetails:
 
         "Received <strong>B.A.M.S.</strong> from Vaidyaratnam Ayurveda College.<br /><br />" +
@@ -277,6 +279,13 @@ export default function Doctors() {
                   <div className="border-t border-gray-200 pt-4 mt-auto">
                     <h4 className="font-medium text-gray-800 mb-2">Speciality</h4>
                     <p className="text-gray-600 mb-4">{doctor.specialty}</p>
+
+                    {doctor.onlineConsultation && (
+                      <div className="flex items-center mb-2">
+                        <span className="glow-dot"></span>
+                        <span className="text-green-700 text-lg font-medium">Online consultation available</span>
+                      </div>
+                    )}
 
                     <h4 className="font-medium text-gray-800 mb-2">Booking</h4>
                     {doctor.bookingNumbers.map((booking, i) => (
